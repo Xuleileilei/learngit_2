@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>文档标题 </title>
+
+<!-- 拖放（Drag 和 drop）-->
+<style type="text/css">
+#div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+<script>
+function allowDrop(ev)
+{
+    ev.preventDefault();
+}
+function drag(ev)
+{
+    ev.dataTransfer.setData("Text",ev.target.id);
+}
+function drop(ev)
+{
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<!-- 拖放（Drag 和 drop）-->
+
+</head>
+
+<body style="text-align: center">
+   <h1 style="text-align: center">标题</h1> 
+
+<!-- 拖放（Drag 和 drop）-->
+<p>拖动图片到矩形框中</p>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<img id="drag1" src="E:\company_KeyOne\cell_image\test_image4\1.png"
+     draggable="true" ondragstart="drag(event)" width="210" height="70"><br>
+<!-- 拖放（Drag 和 drop）-->
+
+<!-- 视频 video -->
+<video width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+</video><br>
+<!-- 视频 video -->
+
+<article>
+  <header>
+    <h1>Internet Explorer 9</h1>
+    <p><time pubdate datetime="2011-03-15"></time></p>
+  </header>
+  <p>Windows Internet Explorer 9(缩写为 IE9 )是在2011年3月14日21:00发布的</p>
+</article>
+
+<!-- 音频 audio -->
+<audio controls>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.mp3" type="audio/mpeg">
+</audio><br>
+<!-- 音频 audio -->
+
+<embed src='https://player.youku.com/player.php/sid/XMTQ3MjM5Mjc0MA==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
+
+<!-- 画布 canvas -->
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<canvas id="myCanvas2" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<!-- 画布 canvas -->
+<!-- 绘制图像 -->
+<script>
+     var c=document.getElementById("myCanvas");
+     var ctx=c.getContext("2d");
+     //块颜色
+     ctx.fillStyle="#FF0000";
+     ctx.fillRect(25,12.5,150,75);  
+     //连线
+     ctx.moveTo(0,0);
+     ctx.lineTo(200,100);
+     ctx.stroke();
+     ctx.moveTo(200,0);
+     ctx.lineTo(0,100);
+     ctx.stroke();
+     //圆
+     ctx.beginPath();
+     ctx.arc(100,50,40,0,2*Math.PI);
+     ctx.stroke();
+     //文字
+     ctx.fillStyle="#00FF00";
+     ctx.font="30px Arial";
+     ctx.fillText("Hello World",10,50);
+</script>
+<!-- 绘制图像 -->
+<script>
+    var c=document.getElementById("myCanvas2");
+    var ctx=c.getContext("2d");  
+    // 创建渐变
+    var grd=ctx.createLinearGradient(0,0,200,0);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+    // 填充渐变
+    ctx.fillStyle=grd;
+    ctx.fillRect(10,10,150,80);
+</script>
+<!-- 绘制图像 -->
+
+<!-- 导入图像 -->
+<p>Image to use:</p>
+<img id="scream" src="E:\company_KeyOne\cell_image\test_image4\1.png" alt="The Scream" width="220" height="110">
+<p>Canvas:</p>
+<canvas id="myCanvas3" width="220" height="110" style="border:1px solid #d3d3d3;">
+</canvas>
+<!-- canvas调用图像 -->
+<script>
+    var c=document.getElementById("myCanvas3");
+    var ctx=c.getContext("2d");
+    var img=document.getElementById("scream");  
+    img.onload = function() {
+        ctx.drawImage(img,0,0,220,110);
+    } 
+</script><br>
+
+<!-- SVG 可伸缩矢量图形 -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+    <polygon points="100,10 40,180 190,60 10,60 160,180"
+    style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/>
+</svg>
+
+<!-- 选择 color 颜色 -->
+<form action="demo-form.php">
+    选择一种颜色：<input type="color" name="favcolor"><br>
+    <input type="submit">
+</form>
+<!-- 选择 color 颜色 -->
+
+<!-- 选择 date 日期 -->
+<form action="demo-form.php">
+        生日：<input type="date" name="bday"><br>
+        <input type="submit">
+    </form>
+<!-- 选择 date 日期 -->
+
+<section>
+    <h1>WWF</h1>
+    <p>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.</p>
+</section>
+  
+<section>
+    <h1>WWF's Panda symbol</h1>
+    <p>The Panda has become the symbol of WWF. The well-known panda logo of WWF originated from a panda named Chi Chi that was transferred from the Beijing Zoo to the London Zoo in the same year of the establishment of WWF.</p>
+</section>
+
+<article>
+    <h1>Internet Explorer 9</h1>
+    <p> Windows Internet Explorer 9(缩写为 IE9 )在2011年3月14日21:00 发布。</p>
+</article>
+  
+<aside>
+    <h4>Epcot Center</h4>
+    <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+</aside>
+
+<nav>
+    <a href="/html/">HTML</a> |
+    <a href="/css/">CSS</a> |
+    <a href="/js/">JavaScript</a> |
+    <a href="/jquery/">jQuery</a>
+</nav>
+
+<form action="demo-form.php" autocomplete="on">
+    First name:<input type="text" name="fname"><br>
+    Last name: <input type="text" name="lname"><br>
+    E-mail: <input type="email" name="email" autocomplete="off"><br>
+    <input type="submit">
+</form>
+      
+<p>填写并提交表单，然后重新刷新页面查看如何自动填充内容。</p>
+<p>注意 form 的 autocomplete 属性为  "on"（开），但是 e-mail 自动为“off”（关）。</p>
+      
+<form action="demo-form.php" novalidate>
+    E-mail: <input type="email" name="user_email">
+    <input type="submit">
+</form>
+<p><strong>注意：</strong>在 Safari 和 Internet Explorer 9 及之前的版本中不支持 novalidate 属性。</p>
+        
+<form action="demo-form.php">
+    First name: <input type="text" name="fname" autofocus><br>
+    Last name: <input type="text" name="lname"><br>
+    <input type="submit">
+</form>
+<p><strong>注意：</strong> Internet Explorer 9及更早 IE 版本不支持 input 标签的 autofocus 属性。</p>
+      
+<form action="demo-form.php" id="form1">
+        First name: <input type="text" name="fname"><br>
+        <input type="submit" value="提交">
+        </form>
+        
+        <p> "Last name" 字段没有在 form 表单之内，但它也是 form 表单的一部分。</p>
+        
+        Last name: <input type="text" name="lname" form="form1">
+        
+<p><b>注意:</b> IE 不支持 form 属性</p>
+
+<form action="demo-form.php">
+                First name: <input type="text" name="fname"><br>
+                Last name: <input type="text" name="lname"><br>
+                <input type="submit" value="提交"><br>
+                <input type="submit" formaction="demo-admin.php" value="提交">
+              </form>
+<p><strong>注意：</strong> Internet Explorer 9及更早 IE 版本不支持 input 标签的 formaction 属性。</p>
+   
+<form action="demo-post-enctype.php" method="post">
+        First name: <input type="text" name="fname"><br>
+        <input type="submit" value="提交">
+        <input type="submit" formenctype="multipart/form-data" value="以 Multipart/form-data 提交">
+      </form>
+      
+<p><strong>注意：</strong> Internet Explorer 9及更早 IE 版本不支持 input 标签的 formenctype 属性。</p>
+      
+<form action="demo-form.php" method="get">
+        First name: <input type="text" name="fname"><br>
+        Last name: <input type="text" name="lname"><br>
+        <input type="submit" value="提交">
+        <input type="submit" formmethod="post" formaction="demo-post.php" value="使用 POST 提交">
+      </form>
+      
+<p><strong>注意：</strong> Internet Explorer 9及更早 IE 版本不支持 input 标签的 formmethod 属性。</p>
+      
+<form action="demo-form.php">
+        E-mail: <input type="email" name="userid"><br>
+        <input type="submit" value="提交"><br>
+        <input type="submit" formnovalidate="formnovalidate" value="不验证提交">
+      </form>
+      
+<p><strong>注意：</strong> Internet Explorer 9及更早 IE 版本,或 Safari 不支持 input 标签的 formnovalidate 属性。</p>
+  
+
+<form action="demo-form.php">
+        First name: <input type="text" name="fname"><br>
+        Last name: <input type="text" name="lname"><br>
+        <input type="submit" value="正常提交">
+        <input type="submit" formtarget="_blank" value="提交到一个新的页面上">
+      </form>
+      
+<p><strong>注意：</strong> Internet Explorer 9及更早 IE 版本不支持 input 标签的 formtarget 属性。</p>
+ 
+<form action="demo-form.php">
+        First name: <input type="text" name="fname"><br>
+        Last name: <input type="text" name="lname"><br>
+        <input type="image" src="img_submit.gif"  alt="Submit" width="48" height="48">
+</form>
+      
+<form action="demo-form.php" method="get">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+          <option value="Internet Explorer">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>
+        <input type="submit">
+        </form>
+        
+<p><strong>注意:</strong> Internet Explorer 9（更早 IE 版本），Safari 不支持 datalist 标签。</p>
+ 
+
+<form action="demo-form.php">
+
+        输入 1980-01-01 之前的日期:
+         <input type="date" name="bday" max="1979-12-31"><br>
+       
+        输入 2000-01-01 之后的日期:
+         <input type="date" name="bday" min="2000-01-02"><br>
+       
+         数量 (在1和5之间):
+         <input type="number" name="quantity" min="1" max="5"><br>
+       
+         <input type="submit">
+       </form>
+       
+<p><strong>注意:</strong> Internet Explorer 9及更早 IE 版本，Firefox 不支持 input 标签的  max 和 min 属性。</p>
+<p><strong>注意:</strong>
+在 Internet Explorer 10中 max 和 min 属性不支持输入日期和时间，IE 10 不支持这些输入类型。</p>
+  
+<form action="demo-form.php">
+        选择图片: <input type="file" name="img" multiple>
+        <input type="submit">
+      </form>
+      
+      <p>尝试选取一张或者多种图片。</p>
+      
+<p><strong>注意:</strong>  Internet Explorer 9及更早 IE 版本不支持 input 标签的 multiple 属性。</p>
+      
+<form action="demo-form.php">
+        Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+        <input type="submit">
+      </form>
+      
+<p><strong>注意:</strong>  Internet Explorer 9及更早 IE 版本，或 Safari 不支持 input 标签的 pattern 属性。</p>
+     
+<form action="demo-form.php">
+        <input type="text" name="fname" placeholder="First name"><br>
+        <input type="text" name="lname" placeholder="Last name"><br>
+        <input type="submit" value="提交">
+      </form>
+      
+<p><strong>注意：</strong> Internet Explorer 9及更早 IE 版本不支持 input 标签的 placeholder 属性。</p>
+ 
+<form action="demo-form.php">
+        Username: <input type="text" name="usrname" required>
+        <input type="submit">
+      </form>
+      
+<p><strong>注意：</strong> Internet Explorer 9及更早 IE 版本，或 Safari 不支持 input 标签的 required 属性。</p>
+      
+<form action="demo-form.php">
+        <input type="number" name="points" step="3">
+        <input type="submit">
+      </form>
+      
+<p><strong>注意：</strong> Internet Explorer 9及更早 IE 版本，或 Firefox 不支持 input 标签的 step 属性。</p>
+
+
+
+</body>
+</html>
